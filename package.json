@@ -1,0 +1,4 @@
+CartoDB OAuth example for node.js
+==
+
+A quick example app showing how to perform Read/Write updates to your CartoDB over OAuth using node.js
