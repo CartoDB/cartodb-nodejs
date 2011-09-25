@@ -1,0 +1,22 @@
+{
+    "private": true,
+    "name": "cartodb-nodejs-oauth",
+    "version": "0.0.1",
+    "main": "./app.js",
+    "description": "CartoDB Node.js OAuth example",
+    "url": "https://github.com/Vizzuality/cartodb-nodejs-oauth",
+    "licenses": [{ "type": "BSD" }],
+    "repositories": [{
+        "type": "git",
+        "url": "git://github.com/Vizzuality/cartodb-nodejs-oauth.git"
+    }],
+    "author": {
+      "name": "Simon Tokumine, Vizzuality",
+      "url": "https://github.com/Vizzuality/cartodb-nodejs-oauth",
+      "email": "simon@vizzuality.com"
+    },
+    "dependencies": {
+        "underscore"  : "1.1.x",
+        "node-oauth": "0.2.0"
+    }
+}
