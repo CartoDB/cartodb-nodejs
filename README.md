@@ -8,7 +8,8 @@ Learn how to use the XAuth method of authenticating against CartoDB. CartoDB als
 
 to run
 ------
-complete all the variables/keys at the top of app.js and then:
+
+**NOTE** complete all the variables at the top of app.js first
 
 ```bash
 npm install
