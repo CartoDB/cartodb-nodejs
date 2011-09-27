@@ -17,6 +17,6 @@
     },
     "dependencies": {
         "underscore"  : "1.1.x",
-        "node-oauth": "0.2.0"
+        "oauth": "0.9.5"
     }
 }
