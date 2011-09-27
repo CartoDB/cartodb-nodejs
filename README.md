@@ -1,9 +1,10 @@
 CartoDB OAuth with node.js
 =================================
 
-Perform simple Read/Write updates to your CartoDB over 2 legged OAuth (XAuth) using Node.js
+Perform Read/Write updates to your CartoDB over OAuth using Node.js
 
-Uses the popular lib 'node-oauth': https://github.com/ciaranj/node-oauth
+Learn how to use the XAuth method of authenticating against CartoDB. CartoDB also supports full OAuth if required.
+
 
 to run
 ------
@@ -13,3 +14,10 @@ complete all the variables/keys at the top of app.js and then:
 npm install
 node app.js
 ```
+
+
+dependencies
+------------
+* nodejs >0.4.10
+* npm
+* CartoDB account
