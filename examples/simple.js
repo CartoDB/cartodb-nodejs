@@ -23,7 +23,7 @@ client.on('error', function(err) {
 });
 
 // request two queries, put here your tables
-client.sql("select * from tracker limit 5");
+client.sql("select * from {table} limit 5", {table: 'tracker'});
 client.sql("select * from tracker limit 5 offset 5");
 
 
