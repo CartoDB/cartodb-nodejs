@@ -9,6 +9,7 @@ client.on('connect', function() {
     console.log("connected");
 });
 
+// this is not required for ApiKey client, see below
 client.connect();
 
 client.on('data', function(data) {
@@ -16,6 +17,11 @@ client.on('data', function(data) {
     console.log(results.rows);
 });
 
+client.on('error', function(err) {
+    console.log("some error ocurred");
+});
+
+// request two queries
 client.sql("select * from tracker limit 5");
 client.sql("select * from tracker limit 5 offset 5");
 
