@@ -3,6 +3,7 @@ var cartodb = require('../');
 var secret = require('./secret.js');
 
 
+// please, fill secret.js using secret.js.example before launch the demo
 var client = new cartodb.CartoDBClientApiKey(secret.USER, secret.API_KEY);
 
 client.on('connect', function() {
@@ -21,7 +22,7 @@ client.on('error', function(err) {
     console.log("some error ocurred");
 });
 
-// request two queries
+// request two queries, put here your tables
 client.sql("select * from tracker limit 5");
 client.sql("select * from tracker limit 5 offset 5");
 
