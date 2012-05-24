@@ -1,0 +1,5 @@
+{
+    "request_url" : "https://:user.cartodb.com/oauth/request_token"
+  , "access_url"  : "https://:user.cartodb.com/oauth/access_token"
+  , "api_url"     : "https://:user.cartodb.com/api/v1/sql"
+}
