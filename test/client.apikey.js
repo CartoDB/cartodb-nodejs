@@ -12,9 +12,7 @@ describe('cartodb_apikey_client', function() {
     this.client.on('connect', function() {
         done();
     });
-    this.client.on('error', function(error){
-      console.log(error);
-      });
+
     this.client.connect();
   });
 

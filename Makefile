@@ -2,7 +2,7 @@ ALL_TESTS = $(shell find test/ -name '*.test.js')
 
 run-tests:
 	@ ./node_modules/.bin/mocha \
-		-t 5000 \
+		-t 10000 \
 		$(TESTFLAGS) \
 		$(TESTS)
 
