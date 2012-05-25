@@ -17,7 +17,8 @@
     },
     "dependencies": {
         "underscore"  : "1.1.x",
-        "oauth": "0.9.5"
+        "oauth": "0.9.5",
+        "superagent": "0.4.x"
     },
     "devDependencies": {
         "mocha": "*"
