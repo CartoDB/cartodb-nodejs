@@ -4,17 +4,15 @@ var secret = require('./secret.js');
 
 
 // please, fill secret.js using secret.js.example before launch the demo
-var client = new cartodb.CartoDBClientApiKey(secret.USER, secret.API_KEY);
+var client = new CartoDB({user:secret.USER, api_key:secret.API_KEY});
 
 client.on('connect', function() {
     console.log("connected");
 });
 
-// this is not required for ApiKey client, see below
 client.connect();
 
 client.on('data', function(data) {
-    var results = JSON.parse(data);
     console.log(results.rows);
 });
 
