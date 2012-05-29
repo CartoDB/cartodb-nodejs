@@ -14,34 +14,30 @@ npm install cartodb
 Usage
 -----
 
-The library provides two clents, oauth client and api key client. Two clients basically have the same funcionallity and you should choose one of them depending on you requirements. 
+The library provides two auth ways, oauth client and api key client. Both  have the same funcionallity and you should choose one of them depending on you requirements. 
 
 ```javascript
-var cartodb = require('cartodb');
+var CartoDB = require('cartodb');
 var secret = require('./secret.js');
 
 
-/* you could change this by CartoDBClient if you want to use oath
-client = new cartodb.CartoDBClient(
-        secret.USER,
-        secret.password,
-        secret.CONSUMER_KEY, 
-        secret.CONSUMER_SECRET);
+/* you could change this providing an api_key instead of consumer key / secret if you want to use oath
+client = new CartoDB({
+       user: secret.USER,
+       password: secret.password,
+       consumer_key: secret.CONSUMER_KEY, 
+       consumer_secret: secret.CONSUMER_SECRET
+});
 */
-var client = new cartodb.CartoDBClientApiKey(secret.USER, secret.API_KEY);
+var client = new CartoDB({user: secret.USER,api_key: secret.API_KEY});
 
 
 client.on('connect', function() {
     console.log("connected");
 });
 
-// this is not required for ApiKey client
-// if you dont call client.connect the connection will not be persistent
-// so the process will finish after the two request finish
-client.connect();
-
+// Data if automatically parsed
 client.on('data', function(data) {
-    var results = JSON.parse(data);
     console.log(results.rows);
 });
 
@@ -50,18 +46,16 @@ client.on('error', function(err) {
 });
 
 // request two queries
-client.sql("select * from {table} limit 5", {table: 'tracker'}); // template can be used
-client.sql("select * from tracker limit 5 offset 5");
+client.query("select * from {table} limit 5", {table: 'tracker'}); // template can be used
+client.query("select * from tracker limit 5 offset 5");
 
-// the process will not finish here if client connection is persistent
 ```
 
 
 
 Dependencies
 ------------
-* nodejs >0.4.10
+* nodejs >0.5.0
 * npm
 * CartoDB account
 
-be careful with nodejs version you are using, there are some problems with https module in 0.4.8 version https://github.com/joyent/node/issues/728
