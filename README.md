@@ -14,7 +14,7 @@ npm install cartodb
 Usage
 -----
 
-The library provides two clents, oauth client and api key client. Two clients basically have the same funcionallity and you should choose one of them depending on you requirements. 
+The library provides two auth ways, oauth client and api key client. Both  have the same funcionallity and you should choose one of them depending on you requirements. 
 
 ```javascript
 var CartoDB = require('cartodb');
@@ -49,7 +49,6 @@ client.on('error', function(err) {
 client.query("select * from {table} limit 5", {table: 'tracker'}); // template can be used
 client.query("select * from tracker limit 5 offset 5");
 
-// the process will not finish here if client connection is persistent
 ```
 
 
