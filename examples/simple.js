@@ -1,5 +1,5 @@
 
-var cartodb = require('../');
+var CartoDB = require('../');
 var secret = require('./secret.js');
 
 
@@ -13,7 +13,7 @@ client.on('connect', function() {
 client.connect();
 
 client.on('data', function(data) {
-    console.log(results.rows);
+    console.log(data.rows);
 });
 
 client.on('error', function(err) {
@@ -23,10 +23,4 @@ client.on('error', function(err) {
 // request two queries, put here your tables
 client.query("select * from {table} limit 5", {table: 'tracker'});
 client.query("select * from tracker limit 5 offset 5");
-
-
-// the process do not finish here, client connection is persistent
-// so you have to finish the process manually
-// if you dont call client.connect the connection will not be persistent
-// so the process will finish after the two request finish
 
