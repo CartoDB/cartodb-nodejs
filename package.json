@@ -2,7 +2,7 @@
     "name": "cartodb",
     "description": "CartoDB Node.js client library",
     "private": true,
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "index",
     "url": "https://github.com/Vizzuality/cartodb-nodejs",
     "licenses": [{ "type": "BSD" }],
@@ -15,6 +15,10 @@
       "url": "https://github.com/Vizzuality/cartodb-nodejs",
       "email": "simon@vizzuality.com"
     },
+    "contributors": [
+      "Dan Zajdband <dan.zajdband@gmail.com>",
+      "Javi Santana <jsantana@vizzuality.com>"
+    ],
     "dependencies": {
         "underscore"  : "1.1.x",
         "oauth": "0.9.5",
