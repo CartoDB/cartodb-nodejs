@@ -1,7 +1,7 @@
 {
     "name": "cartodb",
     "description": "CartoDB Node.js client library",
-    "private": true,
+    "private": false,
     "version": "0.0.3",
     "main": "index",
     "url": "https://github.com/Vizzuality/cartodb-nodejs",
