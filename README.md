@@ -38,7 +38,7 @@ client.on('connect', function() {
 
 // Data if automatically parsed
 client.on('data', function(data) {
-    console.log(results.rows);
+    console.log(data.rows);
 });
 
 client.on('error', function(err) {
