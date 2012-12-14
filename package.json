@@ -29,7 +29,8 @@
     "underscore": "1.1.x",
     "oauth": "0.9.5",
     "superagent": "0.4.x",
-    "debug": "~0.7.0"
+    "debug": "~0.7.0",
+    "superagent-oauth": "~0.2.3"
   },
   "devDependencies": {
     "mocha": "*"
