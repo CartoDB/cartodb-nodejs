@@ -52,7 +52,10 @@ client.pipe(output);
 
 ```
 
-
+CartoDB-nodejs implements visionmedia's debug library. You can see what's happening with the requests via an environment variable
+```
+DEBUG=cartodb node yourscript.js
+```
 
 Dependencies
 ------------
