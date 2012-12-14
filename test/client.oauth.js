@@ -40,7 +40,7 @@ var shouldBehaveLikeASQLCLient = function() {
 };
 
 describe('cartodb_oauth_client', function() {
-  beforeEach(function(done){
+  before(function(done){
     this.client = new CartoDB({
         user : secret.USER,
         password : secret.password,
@@ -51,6 +51,12 @@ describe('cartodb_oauth_client', function() {
     this.client.on('connect', function() {
         done();
     });
+  });
+
+  beforeEach(function(done){
+    this.client.removeAllListeners('data')
+    this.client.removeAllListeners('error')
+    done();
   });
 
   shouldBehaveLikeASQLCLient();
