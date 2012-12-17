@@ -31,31 +31,34 @@ client = new CartoDB({
 */
 var client = new CartoDB({user: secret.USER,api_key: secret.API_KEY});
 
+client.connect();
 
 client.on('connect', function() {
     console.log("connected");
+
+    // template can be used
+    client.query("select * from {table} limit 5", {table: 'tracker'}, function(err, data){
+    // JSON parsed data or error messages are returned
+    })
+
+    // chained calls are allowed
+    .query("select * from tracker limit 5 offset 5", function(err, data){});
 });
 
-// Data if automatically parsed
-client.on('data', function(data) {
-    console.log(data.rows);
-});
+// client is a Stream object instance so you can pipe responses as new line delimited JSON, for example, to a file
 
-client.on('error', function(err) {
-    console.log("some error ocurred");
-});
-
-// request two queries
-client.query("select * from {table} limit 5", {table: 'tracker'}); // template can be used
-client.query("select * from tracker limit 5 offset 5");
+var output = require('fs').createWriteStream(__dirname + '/responses.log');
+client.pipe(output);
 
 ```
 
-
+CartoDB-nodejs implements visionmedia's debug library. You can see what's happening with the requests via an environment variable
+```
+DEBUG=cartodb node yourscript.js
+```
 
 Dependencies
 ------------
-* nodejs >0.5.0
-* npm
+* nodejs >=0.6.0
 * CartoDB account
 

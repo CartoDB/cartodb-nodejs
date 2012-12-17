@@ -1,33 +1,41 @@
 {
-    "name": "cartodb",
-    "description": "CartoDB Node.js client library",
-    "private": false,
-    "version": "0.0.3",
-    "main": "index",
-    "url": "https://github.com/Vizzuality/cartodb-nodejs",
-    "licenses": [{ "type": "BSD" }],
-    "repositories": [{
-        "type": "git",
-        "url": "git://github.com/Vizzuality/cartodb-nodejs.git"
-    }],
-    "author": {
-      "name": "Simon Tokumine, Vizzuality",
-      "url": "https://github.com/Vizzuality/cartodb-nodejs",
-      "email": "simon@vizzuality.com"
-    },
-    "contributors": [
-      "Dan Zajdband <dan.zajdband@gmail.com>",
-      "Javi Santana <jsantana@vizzuality.com>"
-    ],
-    "dependencies": {
-        "underscore"  : "1.1.x",
-        "oauth": "0.9.5",
-        "superagent": "0.4.x"
-    },
-    "devDependencies": {
-        "mocha": "*"
-    },
-    "scripts": {
-      "test": "make test"
+  "name": "cartodb",
+  "description": "CartoDB Node.js client library",
+  "private": false,
+  "version": "0.0.3",
+  "main": "index",
+  "url": "https://github.com/Vizzuality/cartodb-nodejs",
+  "licenses": [
+    {
+      "type": "BSD"
     }
+  ],
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git://github.com/Vizzuality/cartodb-nodejs.git"
+    }
+  ],
+  "author": {
+    "name": "Simon Tokumine, Vizzuality",
+    "url": "https://github.com/Vizzuality/cartodb-nodejs",
+    "email": "simon@vizzuality.com"
+  },
+  "contributors": [
+    "Dan Zajdband <dan.zajdband@gmail.com>",
+    "Javi Santana <jsantana@vizzuality.com>"
+  ],
+  "dependencies": {
+    "underscore": "1.1.x",
+    "oauth": "0.9.5",
+    "superagent": "0.4.x",
+    "debug": "~0.7.0",
+    "superagent-oauth": "~0.2.3"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  }
 }
