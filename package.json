@@ -26,13 +26,13 @@
     "Javi Santana <jsantana@vizzuality.com>"
   ],
   "dependencies": {
-    "oauth": "0.9.5",
-    "superagent": "0.4.x",
-    "debug": "~0.7.0",
-    "superagent-oauth": "~0.2.3"
+    "superagent-oauth": "~0.2.3",
+    "debug": "~0.7.2",
+    "oauth": "~0.9.8",
+    "superagent": "~0.12.4"
   },
   "devDependencies": {
-    "mocha": "*"
+    "mocha": "~1.8.1"
   },
   "scripts": {
     "test": "make test"
