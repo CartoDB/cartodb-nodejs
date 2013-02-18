@@ -31,8 +31,6 @@ client = new CartoDB({
 */
 var client = new CartoDB({user: secret.USER,api_key: secret.API_KEY});
 
-client.connect();
-
 client.on('connect', function() {
     console.log("connected");
 
@@ -49,6 +47,8 @@ client.on('connect', function() {
 
 var output = require('fs').createWriteStream(__dirname + '/responses.log');
 client.pipe(output);
+
+client.connect();
 
 ```
 
