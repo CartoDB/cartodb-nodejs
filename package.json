@@ -10,7 +10,7 @@
       "type": "BSD"
     }
   ],
-  "repositories": [
+  "repository": [
     {
       "type": "git",
       "url": "git://github.com/Vizzuality/cartodb-nodejs.git"
