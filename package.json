@@ -26,10 +26,8 @@
     "Javi Santana <jsantana@vizzuality.com>"
   ],
   "dependencies": {
-    "superagent-oauth": "~0.2.3",
-    "debug": "~0.7.2",
-    "oauth": "~0.9.8",
-    "superagent": "~0.12.4"
+    "request": "latest",
+    "debug": "~0.7.2"
   },
   "devDependencies": {
     "mocha": "~1.8.1"
