@@ -1,60 +1,100 @@
 CartoDB client for node.js
 =================================
 
-This library allows to perform async read/write queries to cartodb.
+This library abtracts calls to CartoDB's SQL and Import APIs.  
 
 Install
-------
+-------
 
 ```bash
-npm install cartodb
+npm install cartodb 
 ```
 
 
 Usage
 -----
 
-The library provides two auth ways, oauth client and api key client. Both  have the same funcionallity and you should choose one of them depending on you requirements. 
+Here's a simple example to make a SQL API call. 
 
-```javascript
+```
 var CartoDB = require('cartodb');
-var secret = require('./secret.js');
 
+var sql = new CartoDB.SQL({user:{USERNAME}, api_key:{APIKEY}})
 
-/* you could change this providing an api_key instead of consumer key / secret if you want to use oath
-client = new CartoDB({
-       user: secret.USER,
-       password: secret.password,
-       consumer_key: secret.CONSUMER_KEY, 
-       consumer_secret: secret.CONSUMER_SECRET
-});
-*/
-var client = new CartoDB({user: secret.USER,api_key: secret.API_KEY});
-
-client.on('connect', function() {
-    console.log("connected");
-
-    // template can be used
-    client.query("select * from {table} limit 5", {table: 'tracker'}, function(err, data){
-    // JSON parsed data or error messages are returned
-    })
-
-    // chained calls are allowed
-    .query("select * from tracker limit 5 offset 5", function(err, data){});
-});
-
-// client is a Stream object instance so you can pipe responses as new line delimited JSON, for example, to a file
-
-var output = require('fs').createWriteStream(__dirname + '/responses.log');
-client.pipe(output);
-
-client.connect();
+sql.execute("SELECT * FROM mytable LIMIT 10")
+  //you can listen for 'done' and 'error' promise events
+  .done(function(data) {
+    console.log(data) //data.rows is an array with an object for each row in your result set
+  });
 
 ```
 
-CartoDB-nodejs implements visionmedia's debug library. You can see what's happening with the requests via an environment variable
+SQL Module
+----------
+
+###Methods
+
+Execute SQL
+`SQL.execute(sql [,vars][, options][, callback])`
+
+`vars` - An object of variables to be rendered with `sql` using Mustache
+`options` - An object for options for the API call.  Only {format: "GeoJSON"} works right now
+`callback` - A function that the `data` object will be passed to if the API call is successful.
+
+`.done()` and `.error()` can be chained after `SQL.execute()`.  
+
 ```
-DEBUG=cartodb node yourscript.js
+var sql = new CartoDB.SQL({user:{USERNAME}, api_key:{APIKEY}});
+sql.execute("SELECT * from {{table}} LIMIT 5")
+  .done(function(data) {
+    //do stuff with the data object
+  })
+  .error(function(error) {
+    //error contains the error message
+  })
+
+
+```
+
+###Piping
+
+You can pipe data from the SQL.execute()
+
+```
+var file = require('fs').createWriteStream(__dirname + '/output.json');
+
+var sql = new CartoDB.SQL({user:{USERNAME}, api_key:{APIKEY}});
+
+sql.execute("SELECT * from {{table}} LIMIT 5", {table: 'all_month'})
+  
+
+sql.pipe(file);
+```
+
+
+Import Module
+-------------
+
+(In progress)
+###Methods
+
+Import a file - This method is the same as dragging a file (CSV,ZIP,XLS,KML) into the CartoDB GUI. The end result is a table in your account.
+
+This method takes the path to your file and results in a table_name for the newly-created table.
+
+`Import.file(filePath, options)`
+
+`.done()` and `.error()` can be chained after `SQL.execute()`.  
+
+```
+var importer = new CartoDB.Import({user:{USERNAME}, api_key:{APIKEY}});
+
+importer
+  .file(__dirname + '/' + 'all_week.csv', {})
+  .done(function(table_name) {
+    console.log('Table ' + table_name + ' has been created!');
+  });
+
 ```
 
 Dependencies
