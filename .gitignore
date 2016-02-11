@@ -1,5 +1,3 @@
-.idea/*
 node_modules/*
-*.swp
-examples/secret.js
+examples/config.js
 test/secret.js
