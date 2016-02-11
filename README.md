@@ -97,8 +97,4 @@ importer
 
 ```
 
-Dependencies
-------------
-* nodejs >=0.6.0
-* CartoDB account
 
