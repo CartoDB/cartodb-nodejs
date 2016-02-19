@@ -13,7 +13,7 @@
   "repository": [
     {
       "type": "git",
-      "url": "git://github.com/Vizzuality/cartodb-nodejs.git"
+      "url": "git://github.com/CartoDB/cartodb-nodejs.git"
     }
   ],
   "author": {
@@ -23,16 +23,20 @@
   },
   "contributors": [
     "Dan Zajdband <dan.zajdband@gmail.com>",
-    "Javi Santana <jsantana@vizzuality.com>"
+    "Javi Santana <jsantana@vizzuality.com>",
+    "Chris Wong <cwhong@cartodb.com>"
   ],
   "dependencies": {
     "request": "latest",
-    "debug": "~0.7.2"
+    "debug": "~0.7.2",
+    "mustache": "^2.2.1"
   },
   "devDependencies": {
     "mocha": "~1.8.1"
   },
   "scripts": {
-    "test": "make test"
+    "test": "npm run test:unit && npm run test:functional",
+    "test:unit": "mocha test/unit",
+    "test:functional": "mocha -t 10000 test/functional"
   }
 }
