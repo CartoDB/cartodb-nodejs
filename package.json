@@ -13,7 +13,7 @@
   "repository": [
     {
       "type": "git",
-      "url": "git://github.com/Vizzuality/cartodb-nodejs.git"
+      "url": "git://github.com/CartoDB/cartodb-nodejs.git"
     }
   ],
   "author": {
@@ -23,7 +23,8 @@
   },
   "contributors": [
     "Dan Zajdband <dan.zajdband@gmail.com>",
-    "Javi Santana <jsantana@vizzuality.com>"
+    "Javi Santana <jsantana@vizzuality.com>",
+    "Chris Wong <cwhong@cartodb.com>"
   ],
   "dependencies": {
     "request": "latest",
