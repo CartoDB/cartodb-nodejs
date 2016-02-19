@@ -1,14 +1,22 @@
 var CartoDB = require('../../');
 var assert = require('assert');
 
-var dummyCredentials = {user: 'someuser', api_key: 'somelongstring'};
+var credentials = require('../secret.js');
 
 beforeEach(function(){
-  this.dummySQL = new CartoDB.SQL(dummyCredentials);
+  this.SQL = new CartoDB.SQL(credentials);
 });
 
 describe('SQL', function() {
-  it('should be true', function() {
-      assert.strictEqual(true, false);
-  });
+  describe('execute', function(){
+    it('should return some results', function(done) {
+      var sql = "select * from {{table}} limit 1";
+      this.SQL.execute(sql, {table: credentials.EXISTING_TABLE}).done(function(data) {
+        assert.strictEqual(data.rows.length, 1);
+        done();
+      }).error(function(e){
+        throw new Error(e);
+      });
+    });
+  })
 });

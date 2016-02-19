@@ -37,6 +37,6 @@
   "scripts": {
     "test": "npm run test:unit && npm run test:functional",
     "test:unit": "mocha test/unit",
-    "test:functional": "mocha test/functional"
+    "test:functional": "mocha -t 10000 test/functional"
   }
 }
