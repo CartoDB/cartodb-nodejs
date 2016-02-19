@@ -1,4 +1,4 @@
-var CartoDB = require('../');
+var CartoDB = require('../../');
 var assert = require('assert');
 
 var dummyCredentials = {user: 'someuser', api_key: 'somelongstring'};

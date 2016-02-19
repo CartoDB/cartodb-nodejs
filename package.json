@@ -35,6 +35,8 @@
     "mocha": "~1.8.1"
   },
   "scripts": {
-    "test": "make test"
+    "test": "npm run test:unit && npm run test:functional",
+    "test:unit": "mocha test/unit",
+    "test:functional": "mocha test/functional"
   }
 }
