@@ -5,6 +5,7 @@ var credentials = require('../secret.js');
 
 beforeEach(function(){
   this.SQL = new CartoDB.SQL(credentials);
+  this.Import = new CartoDB.Import(credentials);
 });
 
 describe('SQL', function() {
@@ -18,5 +19,17 @@ describe('SQL', function() {
         throw new Error(e);
       });
     });
-  })
+  });
+});
+
+
+describe('Import', function() {
+  this.timeout(300000);
+  describe('file', function(){
+    it('should create a new table', function(done) {
+      this.Import.file(__dirname + '/../../examples/import-file/all_week.csv',{}).done(function(table_name) {
+        assert.notEqual(typeof table_name, undefined);
+      })
+    })
+  });
 });

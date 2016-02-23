@@ -1,7 +1,7 @@
 CartoDB client for node.js
 =================================
 
-This library abtracts calls to CartoDB's SQL and Import APIs.  
+This library abtsracts calls to CartoDB's SQL and Import APIs.  
 
 Install
 -------

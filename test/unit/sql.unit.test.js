@@ -9,9 +9,6 @@ beforeEach(function(){
 
 describe('SQL', function() {
 
-  it('should be true', function() {
-      assert.strictEqual(true, false);
-  });
 
   describe('constructor', function() {
     context('when not providing sql_api_url', function() {
@@ -22,7 +19,9 @@ describe('SQL', function() {
     });
     context('when providing sql_api_url', function() {
       it('should have a correct sql_api_url defined', function () {
-        var sql = new CartoDB.SQL(Object.assign(dummyCredentials, {sql_api_url: 'https://someuser.cartodb.com/api/v2/sql'}));
+        var options = dummyCredentials;
+        options.sql_api_url = 'https://someuser.cartodb.com/api/v2/sql';
+        var sql = new CartoDB.SQL(options);
         assert.strictEqual(sql.sql_api_url, 'https://someuser.cartodb.com/api/v2/sql');
       });
     });
