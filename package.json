@@ -1,10 +1,10 @@
 {
   "name": "cartodb",
-  "description": "CartoDB Node.js client library",
+  "description": "CartoDB Node.js library",
   "private": false,
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "index",
-  "url": "https://github.com/Vizzuality/cartodb-nodejs",
+  "url": "https://github.com/CartoDB/cartodb-nodejs",
   "licenses": [
     {
       "type": "BSD"
@@ -17,9 +17,9 @@
     }
   ],
   "author": {
-    "name": "Simon Tokumine, Vizzuality",
-    "url": "https://github.com/Vizzuality/cartodb-nodejs",
-    "email": "simon@vizzuality.com"
+    "name": "Chris Whong, CartoDB",
+    "url": "https://github.com/CartoDB/cartodb-nodejs",
+    "email": "cwhong@cartodb.com"
   },
   "contributors": [
     "Dan Zajdband <dan.zajdband@gmail.com>",
