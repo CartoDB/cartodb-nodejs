@@ -24,7 +24,8 @@
   "contributors": [
     "Dan Zajdband <dan.zajdband@gmail.com>",
     "Javi Santana <jsantana@vizzuality.com>",
-    "Chris Whong <cwhong@cartodb.com>"
+    "Chris Whong <cwhong@cartodb.com>",
+    "Erik Escoffier <erik@cartodb.com>"
   ],
   "dependencies": {
     "debug": "~0.7.2",
