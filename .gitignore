@@ -1,3 +1,5 @@
 node_modules/*
 examples/config.js
 test/secret.js
+
+npm-debug.log

@@ -27,16 +27,19 @@
     "Chris Whong <cwhong@cartodb.com>"
   ],
   "dependencies": {
-    "request": "latest",
     "debug": "~0.7.2",
-    "mustache": "^2.2.1"
+    "mustache": "^2.2.1",
+    "request": "latest"
   },
   "devDependencies": {
+    "eslint": "^2.2.0",
+    "eslint-config-airbnb": "^6.0.2",
     "mocha": "~1.8.1"
   },
   "scripts": {
     "test": "npm run test:unit && npm run test:functional",
     "test:unit": "mocha test/unit",
-    "test:functional": "mocha -t 10000 test/functional"
+    "test:functional": "mocha -t 10000 test/functional",
+    "lint": "eslint -c .eslintrc lib"
   }
 }
