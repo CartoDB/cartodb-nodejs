@@ -78,13 +78,22 @@ Import Module
 (In progress)
 ###Methods
 
-Import a file - This method is the same as dragging a file (CSV,ZIP,XLS,KML) into the CartoDB GUI. The end result is a table in your account.
+`file` - Import a file from the filesystem - This method is the same as dragging a file (CSV,ZIP,XLS,KML) into the CartoDB GUI. The end result is a table in your account.
 
 This method takes the path to your file and results in a table_name for the newly-created table.
 
 `Import.file(filePath, options)`
 
-`.done()` and `.error()` can be chained after `SQL.execute()`.  
+
+`.done()` and `.error()` can be chained after `Import.file()`.  
+
+`url` - Import a file from URL - This method is the same as specifying a publicly accessible url to import in the CartoDB GUI.  The end result is a table in your account.
+
+This method takes the URL to your file and results in a table_name for the newly-created table.
+
+`Import.url(url, options)`
+
+`.done()` and `.error()` can be chained after `Import.url()`.  
 
 ```
 var importer = new CartoDB.Import({user:{USERNAME}, api_key:{APIKEY}});
