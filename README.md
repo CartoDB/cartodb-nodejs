@@ -91,7 +91,9 @@ var importer = new CartoDB.Import({user:{USERNAME}, api_key:{APIKEY}});
 var path = require('path');
 
 importer
-  .file(path.join(__dirname, 'all_week.csv'), {})
+  .file(path.join(__dirname, 'all_week.csv'), {
+    privacy: 'public'
+  })
   .done(function(table_name) {
     console.log('Table ' + table_name + ' has been created!');
   });
