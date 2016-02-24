@@ -7,14 +7,14 @@ Install
 -------
 
 ```bash
-npm install cartodb 
+npm install cartodb
 ```
 
 
 Usage
 -----
 
-Here's a simple example to make a SQL API call. 
+Here's a simple example to make a SQL API call.
 
 ```
 var CartoDB = require('cartodb');
@@ -66,7 +66,7 @@ var file = require('fs').createWriteStream(__dirname + '/output.json');
 var sql = new CartoDB.SQL({user:{USERNAME}, api_key:{APIKEY}});
 
 sql.execute("SELECT * from {{table}} LIMIT 5", {table: 'all_month'})
-  
+
 
 sql.pipe(file);
 ```
@@ -88,13 +88,14 @@ This method takes the path to your file and results in a table_name for the newl
 
 ```
 var importer = new CartoDB.Import({user:{USERNAME}, api_key:{APIKEY}});
+var path = require('path');
 
 importer
-  .file(__dirname + '/' + 'all_week.csv', {})
+  .file(path.join(__dirname, 'all_week.csv'), {
+    privacy: 'public'
+  })
   .done(function(table_name) {
     console.log('Table ' + table_name + ' has been created!');
   });
 
 ```
-
-
