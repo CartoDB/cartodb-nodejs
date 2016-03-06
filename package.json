@@ -28,6 +28,7 @@
     "Erik Escoffier <erik@cartodb.com>"
   ],
   "dependencies": {
+    "command-line-args": "^2.1.6",
     "debug": "~0.7.2",
     "mustache": "^2.2.1",
     "request": "latest"
@@ -42,5 +43,8 @@
     "test:unit": "mocha test/unit",
     "test:functional": "mocha -t 10000 test/functional",
     "lint": "eslint -c .eslintrc lib"
+  },
+  "bin": {
+    "cartodb": "bin/sql.bin.js"
   }
 }
