@@ -122,7 +122,7 @@ var namedMaps = new CartoDB.Maps.Named({
 
 ###Methods - All methods create a promise, and you can listen for `done` and `_error` events.
 
-`Named.create()` - Create a named map by providing a JSON template
+####`Named.create()` - Create a named map by providing a JSON template
 
 Named Map Template:
 ```
@@ -190,7 +190,7 @@ Response:
 ```
 
 
-`Named.instantiate()` - Instantiate a named map to get a layergroupid, passing an options object with the `template_id`, `auth_token` (if required), and placeholder `params` (if needed by your named map template)
+####`Named.instantiate()` - Instantiate a named map to get a layergroupid, passing an options object with the `template_id`, `auth_token` (if required), and placeholder `params` (if needed by your named map template)
 ```
 namedMaps.instantiate({
   template_id: 'world_borders',
@@ -214,7 +214,7 @@ Response:
   last_updated: '2016-01-20T20:19:13.152Z' }
 ```
 
-`Named.update()` - Update a Named Map template
+####`Named.update()` - Update a Named Map template
 
 ```
 namedMaps.update({
@@ -229,7 +229,7 @@ Response:
 { template_id: 'world_borders' }
 ```
 
-`Named.delete()` - Delete a named map - pass it an options object with `template_id`
+####`Named.delete()` - Delete a named map - pass it an options object with `template_id`
 
 ```
 namedMaps.delete({
@@ -243,7 +243,7 @@ Response is the `template_id` that was just deleted:
 ```
 world_borders
 ```
-`Named.list()` - Get a list of all named maps in your account
+####`Named.list()` - Get a list of all named maps in your account
 ```
 namedMaps.list()
   .on('done', function(res) {
