@@ -250,7 +250,7 @@ namedMaps.list()
     console.log(res);
   });
 ```
-`Named.definition()` - Get the current template for a named map
+#`Named.definition()` - Get the current template for a named map
 
 ```
 namedMaps.definition({
