@@ -45,6 +45,7 @@
     "lint": "eslint -c .eslintrc lib"
   },
   "bin": {
-    "cartodb": "bin/sql.bin.js"
+    "cartodb": "bin/sql.bin.js",
+    "cartodb-sql": "bin/sql.bin.js"
   }
 }
