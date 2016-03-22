@@ -105,7 +105,6 @@ sql.pipe(file);
 Import Module
 -------------
 
-(In progress)
 ###Methods
 
 `file` - Import a file from the filesystem - This method is the same as dragging a file (CSV,ZIP,XLS,KML) into the CartoDB GUI. The end result is a table in your account.
@@ -142,7 +141,10 @@ importer
 Named Maps Module
 -----------
 
-###Constructor - Pass in a config object with `user` and `api_key`
+### Constructor
+
+Pass in a config object with `user` and `api_key`
+
 ```
 var namedMaps = new CartoDB.Maps.Named({
     user: 'username',
@@ -150,9 +152,11 @@ var namedMaps = new CartoDB.Maps.Named({
 });
 ```
 
-###Methods - All methods create a promise, and you can listen for `done` and `_error` events.
+### Methods
 
-####`Named.create()` - Create a named map by providing a JSON template
+All methods create a promise, and you can listen for `done` and `_error` events.
+
+#### `Named.create()` - Create a named map by providing a JSON template
 
 Named Map Template:
 ```
@@ -220,7 +224,7 @@ Response:
 ```
 
 
-####`Named.instantiate()` - Instantiate a named map to get a layergroupid, passing an options object with the `template_id`, `auth_token` (if required), and placeholder `params` (if needed by your named map template)
+#### `Named.instantiate()` - Instantiate a named map to get a layergroupid, passing an options object with the `template_id`, `auth_token` (if required), and placeholder `params` (if needed by your named map template)
 ```
 namedMaps.instantiate({
   template_id: 'world_borders',
@@ -244,7 +248,7 @@ Response:
   last_updated: '2016-01-20T20:19:13.152Z' }
 ```
 
-####`Named.update()` - Update a Named Map template
+#### `Named.update()` - Update a Named Map template
 
 ```
 namedMaps.update({
@@ -259,7 +263,7 @@ Response:
 { template_id: 'world_borders' }
 ```
 
-####`Named.delete()` - Delete a named map - pass it an options object with `template_id`
+#### `Named.delete()` - Delete a named map - pass it an options object with `template_id`
 
 ```
 namedMaps.delete({
@@ -273,14 +277,14 @@ Response is the `template_id` that was just deleted:
 ```
 world_borders
 ```
-####`Named.list()` - Get a list of all named maps in your account
+#### `Named.list()` - Get a list of all named maps in your account
 ```
 namedMaps.list()
   .on('done', function(res) {
     console.log(res);
   });
 ```
-####`Named.definition()` - Get the current template for a named map
+#### `Named.definition()` - Get the current template for a named map
 
 ```
 namedMaps.definition({
@@ -289,4 +293,29 @@ namedMaps.definition({
   .on('done', function(res) {
     console.log(res);
   });
+```
+
+Command-line access
+-------------
+
+### SQL Module: `cartodb` / `cartodb-sql`
+
+```
+Options
+
+  -s, --sql string       A SQL query (required).
+  -u, --user string      Your CartoDB username.
+  -a, --api_key string   Your CartoDB API Key (only needed for write operations).
+  -f, --format string    Output format json|csv|geojson|shp|svg|kml|SpatiaLite
+  -o, --output string    Output file. If omitted will use stdout.
+  -c, --config string    Config file. Use a JSON file as a way to input these arguments.
+  -h, --help
+```
+
+#### Examples
+
+```
+$ cartodb -u nerik -f svg 'SELECT * FROM europe' > europe.svg
+$ cartodb -u nerik -f csv 'SELECT cartodb_id, admin, adm_code FROM europe LIMIT 5' -o europe.csv
+$ cartodb -c config.json #hide your api_key there !
 ```
