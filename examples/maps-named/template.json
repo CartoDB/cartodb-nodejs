@@ -1,0 +1,47 @@
+{
+  "version": "0.0.1",
+  "name": "world_borders",
+  "auth": {
+    "method": "token",
+    "valid_tokens": [
+      "auth_token1",
+      "auth_token2"
+    ]
+  },
+  "placeholders": {
+    "color": {
+      "type": "css_color",
+      "default": "red"
+    },
+    "cartodb_id": {
+      "type": "number",
+      "default": 1
+    }
+  },
+  "layergroup": {
+    "version": "1.0.1",
+    "layers": [
+      {
+        "type": "cartodb",
+        "options": {
+          "cartocss_version": "2.1.1",
+          "cartocss": "/** category visualization */ #world_borders { polygon-opacity: 1; line-color: #FFF; line-width: 0; line-opacity: 1; } #world_borders[cat=0] { polygon-fill: #A6CEE3; } #world_borders[cat=1] { polygon-fill: #1F78B4; } #world_borders[cat=2] { polygon-fill: #2167AB; } #world_borders[cat=3] { polygon-fill: #5077b5; }",
+          "sql": "SELECT *, mod(cartodb_id,4) as cat FROM world_borders"
+        }
+      }
+    ]
+  },
+  "view": {
+    "zoom": 4,
+    "center": {
+      "lng": 0,
+      "lat": 0
+    },
+    "bounds": {
+      "west": -45,
+      "south": -45,
+      "east": 45,
+      "north": 45
+    }
+  }
+}

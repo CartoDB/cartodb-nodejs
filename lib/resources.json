@@ -1,4 +1,5 @@
 {
   "sql_api_url"     : "https://{{user}}.cartodb.com/api/v2/sql",
-  "import_api_url"  : "https://{{user}}.cartodb.com/api/v1/imports"
+  "import_api_url"  : "https://{{user}}.cartodb.com/api/v1/imports",
+  "maps_api_url"    : "https://{{user}}.cartodb.com/api/v1/map/named"
 }
