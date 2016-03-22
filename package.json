@@ -42,6 +42,7 @@
   },
   "bin": {
     "cartodb": "bin/sql.bin.js",
-    "cartodb-sql": "bin/sql.bin.js"
+    "cartodb-sql": "bin/sql.bin.js",
+    "cartodb-import": "bin/import.bin.js"
   }
 }

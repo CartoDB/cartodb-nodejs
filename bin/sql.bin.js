@@ -6,8 +6,6 @@ var args = [
   { name: 'sql', alias: 's', type: String, defaultOption: true, description: 'A SQL query (required).' },
   { name: 'format', alias: 'f', type: String, description: 'Output format json|csv|geojson|shp|svg|kml|SpatiaLite' },
   { name: 'output', alias: 'o', type: String, description: 'Output file. If omitted will use stdout.' },
-  { name: 'config', alias: 'c', type: String, description: 'Config file. Use a JSON file as a way to input these arguments.' },
-  { name: 'help', alias: 'h' }
 ];
 
 var options = require('../lib/util/cli.js').getCommandLineArgs(args);

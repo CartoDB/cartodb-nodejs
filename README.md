@@ -318,4 +318,28 @@ Options
 $ cartodb -u nerik -f svg 'SELECT * FROM europe' > europe.svg
 $ cartodb -u nerik -f csv 'SELECT cartodb_id, admin, adm_code FROM europe LIMIT 5' -o europe.csv
 $ cartodb -c config.json #hide your api_key there !
+
+```
+
+### Import Module: `cartodb-import`
+
+
+```
+Options
+
+  -f, --file string      Path to a local file to import.
+  -l, --url string       URL to import.
+  -p, --privacy string   Privacy of the generated table (public|private)
+  -u, --user string      Your CartoDB username
+  -a, --api_key string   Your CartoDB API Key (only needed for write operations)
+  -c, --config string    Config file. Use a JSON file as a way to input these arguments.
+  -h, --help
+```
+
+#### Examples
+
+```
+$ cartodb-import -u nerik --api_key XXX test.csv
+$ cartodb-import -c config.json test.csv
+$ cartodb-import -c config.json --url http://sig.pilote41.fr/urbanisme/aleas_inondation/aleas_sauldre_shp.zip
 ```
