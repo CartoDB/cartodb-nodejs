@@ -20,6 +20,8 @@ if (cli_opts.help || !cli_opts.sql) {
   return;
 }
 
+console.log(cli_opts.api_key)
+
 var sql = new CartoDB.SQL({
   user: cli_opts.user,
   api_key: cli_opts.api_key
@@ -37,5 +39,6 @@ sql.execute(cli_opts.sql, options).done(function (data) {
     console.log(data)
   }
 }).error(function (error) {
+  console.log('ERROR')
   console.log(error)
 })
