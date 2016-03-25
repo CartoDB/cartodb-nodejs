@@ -2,11 +2,14 @@
 
 var CartoDB = require('../');
 var path = require('path');
+var Mustache = require('mustache');
+var openurl = require('openurl');
 
 var args = [
   { name: 'file', alias: 'f', type: String, defaultOption: true, description: 'Path to a local file to import.' },
   { name: 'url', alias: 'l', type: String, description: 'URL to import.' },
   { name: 'privacy', alias: 'p', type: String, description: 'Privacy of the generated table (public|private)' },
+  { name: 'opencdb', type: Boolean, description: 'Open result in CartoDB' },
 ];
 
 var options = require('../lib/util/cli.js').getCommandLineArgs(args);
@@ -34,4 +37,10 @@ if (options.file) {
 
 importing.done(function(table_name) {
   console.log('Table ' + table_name + ' has been created!');
+  if (options.opencdb) {
+    openurl.open(Mustache.render('https://{{user}}.cartodb.com/tables/{{table_name}}/map', {
+      user: options.user,
+      table_name: table_name,
+    }));
+  }
 });
