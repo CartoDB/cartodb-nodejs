@@ -5,11 +5,7 @@
   "version": "0.3.0",
   "main": "index",
   "url": "https://github.com/CartoDB/cartodb-nodejs",
-  "licenses": [
-    {
-      "type": "BSD"
-    }
-  ],
+  "license": "BSD-3-Clause",
   "repository": [
     {
       "type": "git",
@@ -28,8 +24,10 @@
     "Erik Escoffier <erik@cartodb.com>"
   ],
   "dependencies": {
+    "command-line-args": "^2.1.6",
     "debug": "~0.7.2",
     "mustache": "^2.2.1",
+    "openurl": "^1.1.1",
     "request": "latest"
   },
   "devDependencies": {
@@ -42,5 +40,10 @@
     "test:unit": "mocha test/unit",
     "test:functional": "mocha -t 10000 test/functional",
     "lint": "eslint -c .eslintrc lib"
+  },
+  "bin": {
+    "cartodb": "bin/sql.bin.js",
+    "cartodb-sql": "bin/sql.bin.js",
+    "cartodb-import": "bin/import.bin.js"
   }
 }
