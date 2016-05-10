@@ -10,6 +10,11 @@ var args = [
 
 var options = require('../lib/util/cli.js').getCommandLineArgs(args);
 
+if (options.error) {
+  console.log(options.error);
+  return;
+}
+
 if (options.help || !options.sql) {
   console.log(options.usage);
   return;

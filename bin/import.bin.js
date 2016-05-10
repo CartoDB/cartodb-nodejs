@@ -15,6 +15,11 @@ var args = [
 
 var options = require('../lib/util/cli.js').getCommandLineArgs(args);
 
+if (options.error) {
+  console.log(options.error);
+  return;
+}
+
 if (options.help || (!options.file && !options.url)) {
   console.log(options.usage);
   return;
