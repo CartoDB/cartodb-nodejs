@@ -308,7 +308,7 @@ Options
   -a, --api_key string   Your CartoDB API Key (only needed for write operations).
   -f, --format string    Output format json|csv|geojson|shp|svg|kml|SpatiaLite
   -o, --output string    Output file. If omitted will use stdout.
-  -c, --config string    Config file. Use a JSON file as a way to input these arguments.
+  -c, --config string    Config file. Use a JSON file as a way to input these arguments. If no username nor config file is provided, it will look for "config.json" by default.
   -h, --help
 ```
 
@@ -317,7 +317,8 @@ Options
 ```
 $ cartodb -u nerik -f svg 'SELECT * FROM europe' > europe.svg
 $ cartodb -u nerik -f csv 'SELECT cartodb_id, admin, adm_code FROM europe LIMIT 5' -o europe.csv
-$ cartodb -c config.json #hide your api_key there !
+$ cartodb -c config.json 'UPDATE ...' #hide your api_key in this file !
+$ cartodb 'UPDATE ...' # "config.json" will be used for credentials by default
 
 ```
 
@@ -341,5 +342,6 @@ Options
 ```
 $ cartodb-import -u nerik --api_key XXX test.csv
 $ cartodb-import -c config.json test.csv
-$ cartodb-import -c config.json --url http://sig.pilote41.fr/urbanisme/aleas_inondation/aleas_sauldre_shp.zip
+$ cartodb-import test.csv # "config.json" will be used for credentials by default
+$ cartodb-import --url http://sig.pilote41.fr/urbanisme/aleas_inondation/aleas_sauldre_shp.zip
 ```
