@@ -2,7 +2,7 @@
   "name": "cartodb",
   "description": "CartoDB Node.js library",
   "private": false,
-  "version": "0.3.0",
+  "version": "0.5.0",
   "main": "index",
   "url": "https://github.com/CartoDB/cartodb-nodejs",
   "license": "BSD-3-Clause",
