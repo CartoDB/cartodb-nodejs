@@ -14,6 +14,7 @@ var options = require('../lib/util/cli.js').getCommandLineArgs(args);
 
 if (options.error) {
   console.log(options.error);
+  console.log(options.usage);
   return;
 }
 
