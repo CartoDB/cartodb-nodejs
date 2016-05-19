@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 
 var CartoDB = require('../');
+var fs = require('fs');
 
 var args = [
   { name: 'sql', alias: 's', type: String, defaultOption: true, description: 'A SQL query (required).' },
+  { name: 'sqlFile', type: String, description: 'A file containing a SQL query.' },
   { name: 'format', alias: 'f', type: String, description: 'Output format json|csv|geojson|shp|svg|kml|SpatiaLite' },
   { name: 'output', alias: 'o', type: String, description: 'Output file. If omitted will use stdout.' },
 ];
@@ -15,9 +17,14 @@ if (options.error) {
   return;
 }
 
-if (options.help || !options.sql) {
+if (options.help || (!options.sql && !options.sqlFile)) {
   console.log(options.usage);
   return;
+}
+
+if (options.sqlFile) {
+  var sql = fs.readFileSync(options.sqlFile).toString();
+  options.sql = sql;
 }
 
 var sql = new CartoDB.SQL({

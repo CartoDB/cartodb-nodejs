@@ -309,6 +309,7 @@ Options
   -f, --format string    Output format json|csv|geojson|shp|svg|kml|SpatiaLite
   -o, --output string    Output file. If omitted will use stdout.
   -c, --config string    Config file. Use a JSON file as a way to input these arguments. If no username nor config file is provided, it will look for "config.json" by default.
+  --sqlFile string       A file containing a SQL query (you can then omit -s).
   -h, --help
 ```
 
