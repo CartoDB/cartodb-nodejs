@@ -24,16 +24,16 @@
     "Erik Escoffier <erik@cartodb.com>"
   ],
   "dependencies": {
-    "command-line-args": "^2.1.6",
-    "debug": "~0.7.2",
-    "mustache": "^2.2.1",
-    "openurl": "^1.1.1",
-    "request": "latest"
+    "command-line-args": "2.X",
+    "debug": "0.X",
+    "mustache": "2.X",
+    "openurl": "1.X",
+    "request": "2.X"
   },
   "devDependencies": {
-    "eslint": "^2.2.0",
-    "eslint-config-airbnb": "^6.0.2",
-    "mocha": "~1.8.1"
+    "eslint": "2.X",
+    "eslint-config-airbnb": "6.X",
+    "mocha": "2.X"
   },
   "scripts": {
     "test": "npm run test:unit && npm run test:functional",
