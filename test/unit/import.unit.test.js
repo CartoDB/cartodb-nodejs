@@ -35,5 +35,21 @@ describe('Import', function() {
     });
   });
 
+  describe('url', function() {
+    it('should throw an error when user does not provide url', function () {
+      assert.throws(function() {
+        this.dummyImport.file(null);
+      });
+    });
+  });
+
+  describe('stream', function() {
+    it('should throw an error when user does not provide a stream', function () {
+      assert.throws(function() {
+        this.dummyImport.stream(null);
+      });
+    });
+  });
+
 
 })
