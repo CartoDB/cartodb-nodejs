@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "command-line-args": "2.X",
-    "debug": "0.X",
+    "debug": "2.X",
     "mustache": "2.X",
     "openurl": "1.X",
     "request": "2.X"
