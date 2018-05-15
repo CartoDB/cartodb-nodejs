@@ -28,8 +28,11 @@ describe('Import', function() {
   describe('file', function(){
     it('should create a new table', function(done) {
       this.Import.file(__dirname + '/../../examples/import-file/all_week.csv',{}).done(function(table_name) {
-        assert.notEqual(typeof table_name, undefined);
-      })
+          assert.notEqual(typeof table_name, undefined);
+          done();
+      }).error(function(e){
+        throw new Error(e);
+      });
     })
   });
 });

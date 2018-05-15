@@ -13,16 +13,16 @@ describe('SQL', function() {
   describe('constructor', function() {
     context('when not providing sql_api_url', function() {
       it('should have a correct sql_api_url defined', function () {
-        assert.strictEqual(this.dummySQL.sql_api_url, 'https://someuser.cartodb.com/api/v2/sql');
+        assert.strictEqual(this.dummySQL.sql_api_url, 'https://someuser.carto.com/api/v2/sql');
       });
 
     });
     context('when providing sql_api_url', function() {
       it('should have a correct sql_api_url defined', function () {
         var options = dummyCredentials;
-        options.sql_api_url = 'https://someuser.cartodb.com/api/v2/sql';
+        options.sql_api_url = 'https://someuser.carto.com/api/v2/sql';
         var sql = new CartoDB.SQL(options);
-        assert.strictEqual(sql.sql_api_url, 'https://someuser.cartodb.com/api/v2/sql');
+        assert.strictEqual(sql.sql_api_url, 'https://someuser.carto.com/api/v2/sql');
       });
     });
 

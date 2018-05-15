@@ -44,7 +44,7 @@ if (options.file) {
 importing.done(function(table_name) {
   console.log('Table ' + table_name + ' has been created!');
   if (options.openMap || options.openTable) {
-    var url = 'https://{{user}}.cartodb.com/tables/{{table_name}}';
+    var url = 'https://{{user}}.carto.com/tables/{{table_name}}';
     if (options.openMap) url += '/map';
     openurl.open(Mustache.render(url, {
       user: options.user,

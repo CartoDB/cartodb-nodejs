@@ -14,16 +14,16 @@ describe('Maps', function() {
     describe('constructor', function() {
       context('when not providing maps_api_url', function() {
         it('should have a correct maps_api_url defined', function () {
-          assert.strictEqual(this.namedMaps.maps_api_url, 'https://someuser.cartodb.com/api/v1/map/named');
+          assert.strictEqual(this.namedMaps.maps_api_url, 'https://someuser.carto.com/api/v1/map/named');
         });
 
       });
       context('when providing maps_api_url', function() {
         it('should have a correct maps_api_url defined', function () {
           var options = dummyCredentials;
-          options.maps_api_url = 'https://someuser.cartodb.com/api/v1/map/named';
+          options.maps_api_url = 'https://someuser.carto.com/api/v1/map/named';
           var namedMaps = new CartoDB.Maps.Named(options);
-          assert.strictEqual(namedMaps.maps_api_url, 'https://someuser.cartodb.com/api/v1/map/named');
+          assert.strictEqual(namedMaps.maps_api_url, 'https://someuser.carto.com/api/v1/map/named');
         });
       });
 

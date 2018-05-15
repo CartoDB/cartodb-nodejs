@@ -33,7 +33,7 @@
   "devDependencies": {
     "eslint": "^2.2.0",
     "eslint-config-airbnb": "^6.0.2",
-    "mocha": "~1.8.1"
+    "mocha": "^1.8.2"
   },
   "scripts": {
     "test": "npm run test:unit && npm run test:functional",

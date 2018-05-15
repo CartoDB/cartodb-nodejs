@@ -1,4 +1,4 @@
 module.exports = {
     user: 'username',
-    api_key: 'yourreallyeallyeallyeallyeallylongapikey' //available at https://{yourusername}.cartodb.com/your_apps
+    api_key: 'yourreallyeallyeallyeallyeallylongapikey' //available at https://{yourusername}.carto.com/your_apps
 };

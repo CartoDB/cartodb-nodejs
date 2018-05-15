@@ -1,7 +1,7 @@
-CartoDB client for node.js
+CARTO (formerly CartoDB) client for node.js
 =================================
 
-This library abstracts calls to CartoDB's SQL, Import, and Maps APIs.  
+This library abstracts calls to CARTO's SQL, Import, and Maps APIs.  
 
 Install
 -------
@@ -32,7 +32,7 @@ sql.execute("SELECT * FROM mytable LIMIT 10")
 SQL Module
 ----------
 
-###Methods
+### Methods
 
 #### constructor
 
@@ -56,7 +56,7 @@ Note: `api_key` is only required for a write query.
   format: 'json'|'csv'|'geojson'|'shp'|'svg'|'kml'|'SpatiaLite'
 }
 ```
-More details about formats : [CartoDB SQL API docs](http://docs.cartodb.com/cartodb-platform/sql-api/making-calls/#response-formats)
+More details about formats : [CARTO SQL API docs](https://carto.com/docs/carto-engine/sql-api/making-calls/)
 
 `callback` - A function that the `data` object will be passed to if the API call is successful.
 
@@ -86,7 +86,7 @@ sql.execute("SELECT * from {{table}} LIMIT 5", { format: 'csv' })
   });
 ```
 
-###Piping
+### Piping
 
 You can pipe data from the SQL.execute()
 
@@ -105,7 +105,7 @@ sql.pipe(file);
 Import Module
 -------------
 
-###Methods
+### Methods
 
 `file` - Import a file from the filesystem - This method is the same as dragging a file (CSV,ZIP,XLS,KML) into the CartoDB GUI. The end result is a table in your account.
 
