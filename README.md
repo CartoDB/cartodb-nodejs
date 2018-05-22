@@ -3,11 +3,16 @@ CARTO (formerly CartoDB) client for node.js
 
 This library abstracts calls to CARTO's SQL, Import, and Maps APIs.  
 
+NB! It is not official and not maintained. The version in NPM is outdated and does not work. If you want to use a bit updated version, use one directly from GH repo as:
+```
+    "cartodb": "github:cartodb/cartodb-nodejs#master",
+```
+
 Install
 -------
 
 ```bash
-npm install cartodb
+npm install github:cartodb/cartodb-nodejs#master
 ```
 
 
